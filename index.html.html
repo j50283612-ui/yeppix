@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YEPPI ARCHIVE | 기록하고 만드는 것을 좋아하는 예삐의 자기소개서</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Gowun Dodum, JetBrains Mono & Pretendard -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            light: {
+              bg: '#F3F4F6',       /* 심플 라이트 그레이 바탕 */
+              surface: '#FFFFFF',  /* 깔끔한 화이트 카드 */
+              subtle: '#F9FAFB',   /* 보조 쿨 그레이 */
+              border: '#E5E7EB',   /* 은은한 테두리 */
+            },
+            ink: {
+              primary: '#111827',  /* 메인 딥 차콜 */
+              secondary: '#374151',/* 본문 차콜 */
+              muted: '#6B7280',    /* 보조 설명 그레이 */
+            },
+            neon: {
+              pink: '#FF2E93',     /* 선명한 네온 핑크 포인트 */
+              light: '#FF6BB5',
+              dark: '#D81B77',
+              soft: '#FCE7F3',     /* 연한 파스텔 핑크 */
+            }
+          },
+          fontFamily: {
+            sans: ['"Pretendard"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            diary: ['"Gowun Dodum"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'card': '0 4px 20px -2px rgba(17, 24, 39, 0.05), 0 2px 6px -1px rgba(17, 24, 39, 0.03)',
+            'neon': '0 10px 28px -4px rgba(255, 46, 147, 0.32)',
+            'neon-sm': '0 4px 14px -2px rgba(255, 46, 147, 0.24)',
+          },
+          animation: {
+            'float': 'float 4s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-5px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F3F4F6;
+      color: #111827;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* 라이트 그레이 바탕 위 도트 그리드 패턴 */
+    .bg-dot-grid {
+      background-image: radial-gradient(#D1D5DB 1.15px, transparent 1.15px);
+      background-size: 26px 26px;
+    }
+
+    /* 화이트 카드 & 네온 핑크 호버 효과 */
+    .essay-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 4px 20px -2px rgba(17, 24, 39, 0.05);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .essay-card:hover {
+      border-color: rgba(255, 46, 147, 0.5);
+      box-shadow: 0 14px 30px -6px rgba(255, 46, 147, 0.16), 0 4px 12px -2px rgba(17, 24, 39, 0.04);
+      transform: translateY(-3px);
+    }
+
+    /* 이미지 부드러운 페이드인 */
+    .img-smooth {
+      opacity: 0;
+      transition: opacity 0.55s ease-in-out, transform 0.5s ease;
+    }
+    .img-smooth.loaded {
+      opacity: 1;
+    }
+
+    /* 커스텀 스크롤바 */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F3F4F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D1D5DB;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF2E93;
+    }
+  </style>
+</head>
+<body class="bg-dot-grid selection:bg-neon-pink selection:text-white">
+
+  <!-- 상단 네비게이션 헤더 -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-light-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <!-- 브랜드 타이틀 -->
+      <a href="#about" class="flex items-center gap-2.5 group shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-neon-soft border border-neon-pink/30 flex items-center justify-center shadow-neon-sm group-hover:rotate-90 transition-transform duration-500">
+          <!-- 수리검 SVG -->
+          <svg class="w-5 h-5 text-neon-pink" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2ZM12 9.5C10.62 9.5 9.5 10.62 9.5 12C9.5 13.38 10.62 14.5 12 14.5C13.38 14.5 14.5 13.38 14.5 12C14.5 10.62 13.38 9.5 12 9.5Z"/>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <span class="block text-[11px] font-medium text-ink-muted">기록하고 만드는 것을 좋아하는</span>
+          <span class="font-extrabold text-sm sm:text-base text-ink-primary tracking-tight">
+            예삐의 공간 <span class="font-mono text-xs text-neon-pink font-bold ml-1">YEPPI ARCHIVE</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- 데스크톱 앵커 필 메뉴 -->
+      <nav class="hidden lg:flex items-center gap-2 text-xs font-bold">
+        <a href="#about" class="px-3.5 py-2 rounded-full bg-light-subtle hover:bg-neon-soft text-ink-secondary hover:text-neon-pink border border-light-border hover:border-neon-pink/40 transition">자기소개</a>
+        <a href="#leadership" class="px-3.5 py-2 rounded-full bg-light-subtle hover:bg-neon-soft text-ink-secondary hover:text-neon-pink border border-light-border hover:border-neon-pink/40 transition">활동 및 리더십</a>
+        <a href="#projects" class="px-3.5 py-2 rounded-full bg-light-subtle hover:bg-neon-soft text-ink-secondary hover:text-neon-pink border border-light-border hover:border-neon-pink/40 transition">대표 프로젝트</a>
+        <a href="#shinobi" class="px-3.5 py-2 rounded-full bg-light-subtle hover:bg-neon-soft text-ink-secondary hover:text-neon-pink border border-light-border hover:border-neon-pink/40 transition">닌자 등록증 & 취향</a>
+        <a href="#guestbook" class="px-3.5 py-2 rounded-full bg-neon-pink text-white hover:bg-neon-dark shadow-neon-sm transition">방명록</a>
+      </nav>
+
+      <!-- 모바일 메뉴 버튼 -->
+      <button id="mobile-menu-btn" aria-label="메뉴 열기" class="lg:hidden p-2.5 rounded-xl text-ink-secondary hover:text-neon-pink hover:bg-light-bg transition">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </div>
+
+    <!-- 모바일 드롭다운 메뉴 -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-light-border px-4 pt-2 pb-4 space-y-1.5 shadow-sm">
+      <a href="#about" class="block px-3.5 py-2.5 rounded-xl text-sm font-bold text-ink-secondary hover:bg-neon-soft/60 hover:text-neon-pink">01. 자기소개 (About & Strengths)</a>
+      <a href="#leadership" class="block px-3.5 py-2.5 rounded-xl text-sm font-bold text-ink-secondary hover:bg-neon-soft/60 hover:text-neon-pink">02. 활동 및 리더십 (합창부 60기 기장)</a>
+      <a href="#projects" class="block px-3.5 py-2.5 rounded-xl text-sm font-bold text-ink-secondary hover:bg-neon-soft/60 hover:text-neon-pink">03. 대표 프로젝트 케이스 스터디</a>
+      <a href="#shinobi" class="block px-3.5 py-2.5 rounded-xl text-sm font-bold text-ink-secondary hover:bg-neon-soft/60 hover:text-neon-pink">04. 닌자 등록증 & 취향 소개</a>
+      <a href="#guestbook" class="block px-3.5 py-2.5 rounded-xl text-sm font-bold text-neon-pink bg-neon-soft/40">05. 에필로그 & 차크라 방명록</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-20 sm:space-y-28">
+
+    <!-- =====================================================================
+         SECTION 1: 프롤로그 & 나의 핵심 강점 (About & Strengths)
+    ====================================================================== -->
+    <section id="about" class="relative scroll-mt-24">
+      <!-- 은은한 네온 핑크 배경 글로우 -->
+      <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-[300px] sm:w-[540px] h-[260px] bg-neon-pink/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="relative z-10 essay-card rounded-3xl p-7 sm:p-11 md:p-12 border-t-4 border-t-neon-pink">
+        <!-- 상단 자기소개서 문서 라벨 -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 mb-8 border-b border-light-border">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neon-soft border border-neon-pink/30 text-xs font-bold text-neon-pink animate-float">
+            <span class="w-2 h-2 rounded-full bg-neon-pink animate-ping"></span>
+            <span>SELF-INTRODUCTION ESSAY · 자기소개서</span>
+          </div>
+          <span class="font-mono text-xs text-ink-muted">DOCUMENT NO. YEPPI-2026</span>
+        </div>
+
+        <!-- 프롤로그 헤드라인 -->
+        <div class="max-w-4xl">
+          <p class="text-sm sm:text-base font-semibold text-neon-pink mb-2">
+            안녕하세요, 기록하고 만드는 것을 좋아하는 예삐의 공간입니다.
+          </p>
+          <h1 class="text-2xl sm:text-4xl md:text-[42px] font-black text-ink-primary leading-snug tracking-tight mb-6">
+            “스쳐 지나가는 생각과 감상을 나의 손으로 기록하고,<br class="hidden md:inline" />
+            사람들과 함께 <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-rose-500">무대 위로 만들어냅니다.</span>”
+          </h1>
+
+          <!-- 해시태그 3종 -->
+          <div class="flex flex-wrap gap-2.5 mb-7">
+            <span class="px-4 py-1.5 rounded-full bg-neon-pink text-white text-xs sm:text-sm font-bold shadow-neon-sm">
+              #기록하는_기획자
+            </span>
+            <span class="px-4 py-1.5 rounded-full bg-neon-pink text-white text-xs sm:text-sm font-bold shadow-neon-sm">
+              #합창부_60기_기장
+            </span>
+            <span class="px-4 py-1.5 rounded-full bg-neon-pink text-white text-xs sm:text-sm font-bold shadow-neon-sm">
+              #유쾌한_실행력
+            </span>
+          </div>
+
+          <!-- 진솔한 자기소개 에세이 본문 -->
+          <div class="space-y-4 text-sm sm:text-base text-ink-secondary leading-relaxed bg-light-subtle rounded-2xl p-5 sm:p-7 border border-light-border">
+            <p>
+              일상 속에서 마주치는 작은 불편함이나 스쳐 지나가는 영감을 그냥 흘려보내기 아까워 <strong>직접 기록하고 내 손으로 해결하는 과정</strong>에서 가장 큰 즐거움을 느낍니다. 책을 읽고 영화를 보며 느낀 여운을 남기기 위해 <strong>‘나만의 콘텐츠 기록장’</strong>을 만들었고, 온전한 몰입의 시간을 설계하고 싶어 <strong>‘집중 공간 타이머’</strong>와 이를 하나로 엮은 <strong>‘예삐 아카이브’</strong>를 완성했습니다.
+            </p>
+            <p>
+              혼자만의 기록이 내면을 단단하게 채워주었다면, <strong>합창부 60기 기장</strong>으로 활동하며 여름연주회 <strong>‘기수무대’ 파트를 직접 기획</strong>한 경험은 사람들과 호흡을 맞추며 하나의 감동을 빚어내는 법을 가르쳐 주었습니다. 섬세한 관찰력과 유쾌한 실행력으로, 오늘도 저만의 다음 페이지를 채워가고 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 나의 3가지 핵심 강점 (Core Strengths) -->
+        <div class="mt-10 pt-8 border-t border-light-border">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-neon-pink">CORE STRENGTHS</span>
+            <span class="text-xs text-ink-muted">| 저를 움직이는 3가지 강점</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- 강점 1 -->
+            <div class="rounded-2xl p-5 bg-white border border-light-border hover:border-neon-pink/50 transition shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-neon-soft border border-neon-pink/30 flex items-center justify-center text-neon-pink font-mono font-bold text-sm mb-3.5">
+                01
+              </div>
+              <h3 class="text-base sm:text-lg font-extrabold text-ink-primary mb-2">
+                사용자 시선의 섬세한 개선력
+              </h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                처음 웹앱을 화사한 핑크 단색으로 제작했다가 장시간 사용 시 눈이 피로하다는 점을 직접 체감하고, 눈이 편안한 <strong>라이트 그레이 + 네온 핑크 포인트</strong>로 과감히 UI를 리뉴얼하며 사용성을 높였습니다.
+              </p>
+            </div>
+
+            <!-- 강점 2 -->
+            <div class="rounded-2xl p-5 bg-white border border-light-border hover:border-neon-pink/50 transition shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-neon-soft border border-neon-pink/30 flex items-center justify-center text-neon-pink font-mono font-bold text-sm mb-3.5">
+                02
+              </div>
+              <h3 class="text-base sm:text-lg font-extrabold text-ink-primary mb-2">
+                유연하게 연결하는 통합 기획력
+              </h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                각각 따로 사용하던 ‘집중 타이머’와 ‘콘텐츠 기록장’ 사이의 연결고리를 발견해, 몰입 직후 감상을 즉시 기록하는 올인원 공간 <strong>‘예삐 아카이브’</strong>로 통합 설계했습니다.
+              </p>
+            </div>
+
+            <!-- 강점 3 -->
+            <div class="rounded-2xl p-5 bg-white border border-light-border hover:border-neon-pink/50 transition shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-neon-soft border border-neon-pink/30 flex items-center justify-center text-neon-pink font-mono font-bold text-sm mb-3.5">
+                03
+              </div>
+              <h3 class="text-base sm:text-lg font-extrabold text-ink-primary mb-2">
+                소통과 조율로 완성하는 리더십
+              </h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                <strong>합창부 60기 기장</strong>으로서 다양한 목소리를 하나로 모으고, 여름연주회 <strong>기수무대 파트를 단독 기획</strong>하며 연습 일정부터 무대 연출까지 책임감 있게 완수했습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 2: 활동 및 리더십 (합창부 60기 기장 & 여름연주회 기수무대 기획)
+    ====================================================================== -->
+    <section id="leadership" class="scroll-mt-24">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-neon-pink font-bold">02 // ACTIVITY & LEADERSHIP</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-ink-primary mt-1">
+            예삐의 활동 & 리더십
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-ink-muted">
+          함께 목소리를 맞추고 하나의 무대를 기획하며 배운 소통과 실행의 기록입니다.
+        </p>
+      </div>
+
+      <div class="essay-card rounded-3xl p-6 sm:p-9 md:p-10 border-2 border-neon-pink/30">
+        <!-- 활동 타이틀 및 역할 배지 -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-7 border-b border-light-border">
+          <div class="flex items-start sm:items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-neon-soft border border-neon-pink/30 flex items-center justify-center text-neon-pink text-xl shrink-0">
+              <i class="fa-solid fa-microphone-lines"></i>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-xl sm:text-2xl font-black text-ink-primary">
+                  합창부 60기 기장 활동 & 여름연주회 기수무대 기획
+                </h3>
+              </div>
+              <p class="text-xs sm:text-sm text-neon-pink font-bold mt-0.5">
+                60기 기장(Batch Leader) · 한여름 밤의 연주회 기수무대 총괄 기획
+              </p>
+            </div>
+          </div>
+
+          <span class="self-start md:self-center px-3.5 py-1.5 rounded-full bg-light-subtle border border-light-border text-xs font-mono font-bold text-ink-secondary">
+            CHOIR 60TH · SUMMER CONCERT
+          </span>
+        </div>
+
+        <!-- 자기소개서형 활동 스토리 3단 구성 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+          <div class="rounded-2xl p-5 bg-light-subtle border border-light-border">
+            <div class="text-xs font-mono font-bold text-neon-pink mb-1.5">ROLE · 기장의 책임감</div>
+            <h4 class="font-extrabold text-ink-primary text-base mb-2">60기 단원들을 잇는 구심점</h4>
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              합창부 60기 기장으로서 동기들의 의견을 세심하게 경청하고, 연습 분위기가 지치지 않도록 소통의 다리 역할을 하며 끈끈한 팀워크를 다졌습니다.
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-5 bg-light-subtle border border-light-border">
+            <div class="text-xs font-mono font-bold text-neon-pink mb-1.5">PLANNING · 기수무대 기획</div>
+            <h4 class="font-extrabold text-ink-primary text-base mb-2">선곡부터 무대 연출까지 단독 기획</h4>
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              여름연주회의 하이라이트인 <strong>‘기수무대’ 파트를 따로 기획</strong>하며 무대 콘셉트와 곡 선정(〈한 페이지가 될 수 있게〉 등), 파트별 동선과 연습 일정을 주도적으로 조율했습니다.
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-5 bg-light-subtle border border-light-border">
+            <div class="text-xs font-mono font-bold text-neon-pink mb-1.5">TAKEAWAY · 배운 점</div>
+            <h4 class="font-extrabold text-ink-primary text-base mb-2">하모니가 만들어내는 성취의 기쁨</h4>
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              서로 다른 음색이 모여 하나의 화음이 되듯, 각자의 강점을 존중하고 조율할 때 혼자서는 결코 만들 수 없는 감동적인 무대가 완성된다는 확신을 얻었습니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 구글 드라이브 업로드 사진 2장 갤러리 (클릭 시 라이트박스 확대) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- 사진 2: 여름연주회 무대 인사 (1a_BYoOAm7RFbFCxGJB6t856n6rzMkAI0) -->
+          <figure class="group rounded-2xl bg-light-subtle border border-light-border overflow-hidden hover:border-neon-pink/50 transition shadow-sm">
+            <div
+              onclick="openLightbox('https://drive.google.com/thumbnail?id=1a_BYoOAm7RFbFCxGJB6t856n6rzMkAI0&sz=w1200', 'https://lh3.googleusercontent.com/d/1a_BYoOAm7RFbFCxGJB6t856n6rzMkAI0', '여름연주회 무대 인사 · 한 페이지가 될 수 있게 🎶', '합창부 60기 여름연주회 무대에서 관객분들께 감사 인사를 전하는 순간')"
+              class="relative aspect-[16/10] bg-gray-200 overflow-hidden cursor-zoom-in"
+            >
+              <img
+                src="https://drive.google.com/thumbnail?id=1a_BYoOAm7RFbFCxGJB6t856n6rzMkAI0&sz=w1200"
+                data-fallback="https://lh3.googleusercontent.com/d/1a_BYoOAm7RFbFCxGJB6t856n6rzMkAI0"
+                alt="합창부 여름연주회 무대 인사 - 한 페이지가 될 수 있게"
+                onload="this.classList.add('loaded')"
+                onerror="handleDriveImageError(this, '여름연주회 무대 인사 🎶')"
+                class="img-smooth w-full h-full object-cover object-center group-hover:scale-105"
+              />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-ink-primary/75 backdrop-blur-sm text-white font-mono text-[11px] font-bold">
+                STAGE · 한여름 밤의 연주회
+              </span>
+              <span class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/90 text-ink-primary flex items-center justify-center text-xs shadow opacity-90 group-hover:bg-neon-pink group-hover:text-white transition">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </span>
+            </div>
+            <figcaption class="p-4 flex items-center justify-between gap-2 bg-white">
+              <div>
+                <p class="font-extrabold text-sm sm:text-base text-ink-primary">
+                  여름연주회 무대 인사 · 한 페이지가 될 수 있게 🎶
+                </p>
+                <p class="text-xs text-ink-muted mt-0.5">
+                  기수무대 기획과 연습의 결실을 맺었던 벅찬 무대 위 순간
+                </p>
+              </div>
+              <span class="text-xs font-bold text-neon-pink shrink-0">클릭 확대</span>
+            </figcaption>
+          </figure>
+
+          <!-- 사진 1: 사랑하는 60기 단원들과 함께 (1EV2bO4CoKLpOZKeaxwY7KDneBzZ0SOkT) -->
+          <figure class="group rounded-2xl bg-light-subtle border border-light-border overflow-hidden hover:border-neon-pink/50 transition shadow-sm">
+            <div
+              onclick="openLightbox('https://drive.google.com/thumbnail?id=1EV2bO4CoKLpOZKeaxwY7KDneBzZ0SOkT&sz=w1200', 'https://lh3.googleusercontent.com/d/1EV2bO4CoKLpOZKeaxwY7KDneBzZ0SOkT', '사랑하는 60기 단원들과 함께 📸', '연주회 무대 뒤 대기실에서 60기 단원들과 함께 남긴 소중한 기념사진')"
+              class="relative aspect-[16/10] bg-gray-200 overflow-hidden cursor-zoom-in"
+            >
+              <img
+                src="https://drive.google.com/thumbnail?id=1EV2bO4CoKLpOZKeaxwY7KDneBzZ0SOkT&sz=w1200"
+                data-fallback="https://lh3.googleusercontent.com/d/1EV2bO4CoKLpOZKeaxwY7KDneBzZ0SOkT"
+                alt="합창부 60기 단원들과 함께 찍은 단체 사진"
+                onload="this.classList.add('loaded')"
+                onerror="handleDriveImageError(this, '사랑하는 60기 단원들과 함께 📸')"
+                class="img-smooth w-full h-full object-cover object-center group-hover:scale-105"
+              />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-neon-pink/90 backdrop-blur-sm text-white font-mono text-[11px] font-bold">
+                60TH BATCH · TEAMWORK
+              </span>
+              <span class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/90 text-ink-primary flex items-center justify-center text-xs shadow opacity-90 group-hover:bg-neon-pink group-hover:text-white transition">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </span>
+            </div>
+            <figcaption class="p-4 flex items-center justify-between gap-2 bg-white">
+              <div>
+                <p class="font-extrabold text-sm sm:text-base text-ink-primary">
+                  사랑하는 60기 단원들과 함께 📸
+                </p>
+                <p class="text-xs text-ink-muted mt-0.5">
+                  기장으로서 함께 웃고 노래하며 호흡을 맞췄던 든든한 60기 동료들
+                </p>
+              </div>
+              <span class="text-xs font-bold text-neon-pink shrink-0">클릭 확대</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 3: 대표 프로젝트 케이스 스터디 (Project Case Studies)
+    ====================================================================== -->
+    <section id="projects" class="scroll-mt-24">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-neon-pink font-bold">03 // PROJECT CASE STUDIES</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-ink-primary mt-1">
+            대표 프로젝트 케이스 스터디
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-ink-muted">
+          기획 배경부터 구현, 그리고 제작 과정에서 배운 점까지 담은 작업 기록입니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+        <!-- 프로젝트 1: 나만의 콘텐츠 기록장 -->
+        <article class="essay-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-5">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-neon-soft border border-neon-pink/30 flex items-center justify-center text-neon-pink text-xl group-hover:scale-105 transition-transform">
+                  <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <div>
+                  <span class="font-mono text-[11px] font-bold text-neon-pink">PROJECT 01 · ARCHIVE</span>
+                  <h3 class="text-xl font-black text-ink-primary group-hover:text-neon-pink transition-colors">
+                    나만의 콘텐츠 기록장
+                  </h3>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-light-subtle text-ink-secondary border border-light-border">
+                WEB APP
+              </span>
+            </div>
+
+            <!-- 케이스 스터디 내러티브 -->
+            <div class="space-y-3.5 text-xs sm:text-sm text-ink-secondary leading-relaxed mb-6">
+              <div class="p-3.5 rounded-2xl bg-light-subtle border border-light-border">
+                <span class="font-bold text-ink-primary block mb-1">💡 기획 배경</span>
+                독서, 영화, 애니메이션, 소설, 음악 등 다양한 취향의 감상이 여기저기 흩어지는 것이 아쉬워, 별점과 감상평을 체계적으로 아카이빙할 수 있는 전용 웹앱을 기획했습니다.
+              </div>
+              <div class="p-3.5 rounded-2xl bg-light-subtle border border-light-border">
+                <span class="font-bold text-ink-primary block mb-1">⚙️ 핵심 기능 & 배운 점</span>
+                카테고리·진행 상태 필터, 실시간 검색, 통계 대시보드와 브라우저 자동 저장(<code class="text-neon-pink font-mono text-xs">localStorage</code>) 및 JSON 백업을 구현하며 데이터 구조화와 직관적인 UX 흐름을 익혔습니다.
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 rounded-lg bg-neon-soft/50 text-xs font-semibold text-neon-pink border border-neon-pink/20">#취향아카이브</span>
+              <span class="px-2.5 py-1 rounded-lg bg-light-subtle text-xs font-medium text-ink-secondary border border-light-border">#별점·통계대시보드</span>
+              <span class="px-2.5 py-1 rounded-lg bg-light-subtle text-xs font-medium text-ink-secondary border border-light-border">#자동저장·백업</span>
+            </div>
+          </div>
+
+          <button onclick="openWebAppLauncher('archive')" class="w-full py-3.5 px-4 rounded-2xl bg-neon-pink hover:bg-neon-dark text-white font-bold text-sm shadow-neon-sm transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-play text-xs"></i>
+            <span>자세히 보기 · 웹앱 바로 실행하기</span>
+          </button>
+        </article>
+
+        <!-- 프로젝트 2: 예삐의 집중 공간 타이머 (MONGLE) & 통합 아카이브 -->
+        <article class="essay-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-5">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-neon-soft border border-neon-pink/30 flex items-center justify-center text-neon-pink text-xl group-hover:scale-105 transition-transform">
+                  <i class="fa-solid fa-hourglass-half"></i>
+                </div>
+                <div>
+                  <span class="font-mono text-[11px] font-bold text-neon-pink">PROJECT 02 · FOCUS & INTEGRATION</span>
+                  <h3 class="text-xl font-black text-ink-primary group-hover:text-neon-pink transition-colors">
+                    예삐의 집중 공간 타이머 (MONGLE)
+                  </h3>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-light-subtle text-ink-secondary border border-light-border">
+                ALL-IN-ONE
+              </span>
+            </div>
+
+            <!-- 케이스 스터디 내러티브 -->
+            <div class="space-y-3.5 text-xs sm:text-sm text-ink-secondary leading-relaxed mb-6">
+              <div class="p-3.5 rounded-2xl bg-light-subtle border border-light-border">
+                <span class="font-bold text-ink-primary block mb-1">💡 기획 배경</span>
+                독서나 창작에 깊이 몰입할 수 있는 시간 관리 도구가 필요했습니다. 나아가 타이머로 집중한 뒤 곧바로 감상평을 남길 수 있도록 <strong>‘예삐 아카이브’</strong>로 통합 확장했습니다.
+              </div>
+              <div class="p-3.5 rounded-2xl bg-light-subtle border border-light-border">
+                <span class="font-bold text-ink-primary block mb-1">⚙️ 핵심 기능 & 배운 점</span>
+                외부 음원 파일 없이 브라우저 내장 <code class="text-neon-pink font-mono text-xs">Web Audio API</code>로 빗소리·백색소음을 실시간 합성하고, 탭 전환 시에도 멈추지 않는 미니 타이머 배지를 구현하며 사용자 중심 설계를 체득했습니다.
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 rounded-lg bg-neon-soft/50 text-xs font-semibold text-neon-pink border border-neon-pink/20">#예삐아카이브통합</span>
+              <span class="px-2.5 py-1 rounded-lg bg-light-subtle text-xs font-medium text-ink-secondary border border-light-border">#WebAudio사운드</span>
+              <span class="px-2.5 py-1 rounded-lg bg-light-subtle text-xs font-medium text-ink-secondary border border-light-border">#몰입과기록연동</span>
+            </div>
+          </div>
+
+          <button onclick="openWebAppLauncher('timer')" class="w-full py-3.5 px-4 rounded-2xl bg-neon-pink hover:bg-neon-dark text-white font-bold text-sm shadow-neon-sm transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-play text-xs"></i>
+            <span>자세히 보기 · 웹앱 바로 실행하기</span>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 4: 예삐의 닌자 등록증 (SHINOBI ID) & 취향 소개
+    ====================================================================== -->
+    <section id="shinobi" class="scroll-mt-24">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-neon-pink font-bold">04 // SHINOBI ID & HOBBIES</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-ink-primary mt-1">
+            예삐의 닌자 등록증 & 취향 아카이브
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-ink-muted">
+          좋아하는 것들에서 얻는 에너지와 유쾌한 닌자 정신으로 작업에 임합니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
+        <!-- 좌측: SHINOBI ID (닌자 등록증) -->
+        <div class="lg:col-span-5 rounded-3xl bg-white border-2 border-neon-pink/55 p-6 sm:p-7 shadow-neon relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 text-neon-pink/10 text-[130px] pointer-events-none select-none">
+            🍥
+          </div>
+
+          <!-- 등록증 상단 -->
+          <div class="flex items-center justify-between border-b border-light-border pb-3.5 mb-5">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-md bg-neon-pink text-white font-mono text-xs font-bold tracking-wider">
+                SHINOBI ID
+              </span>
+              <span class="text-xs font-mono text-ink-muted">닌자 등록증</span>
+            </div>
+            <span class="text-xs text-neon-pink font-bold">🍃 나뭇잎 마을 승인</span>
+          </div>
+
+          <!-- 공식 증명사진 (구글 드라이브 이미지 3: 1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9) -->
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-6 text-center sm:text-left">
+            <div class="shrink-0 group">
+              <div
+                onclick="openLightbox('https://drive.google.com/thumbnail?id=1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9&sz=w800', 'https://lh3.googleusercontent.com/d/1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9', 'OFFICIAL SHINOBI PHOTO · 승인 완료 👍', '나뭇잎 마을 취향 수집 상급 닌자 예삐의 공식 등록증 사진')"
+                class="w-28 h-32 rounded-2xl bg-neon-soft border-2 border-neon-pink overflow-hidden shadow-neon-sm relative cursor-zoom-in mx-auto sm:mx-0"
+              >
+                <img
+                  src="https://drive.google.com/thumbnail?id=1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9&sz=w800"
+                  data-fallback="https://lh3.googleusercontent.com/d/1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9"
+                  alt="예삐의 닌자 등록증 공식 사진 - 나루토 따봉"
+                  onload="this.classList.add('loaded')"
+                  onerror="handleDriveImageError(this, 'YEPPI ID 👍')"
+                  class="img-smooth w-full h-full object-cover object-center group-hover:scale-105"
+                />
+                <span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-neon-pink/90 text-white font-mono text-[9px] font-bold shadow">
+                  🍃 승인
+                </span>
+              </div>
+              <div class="mt-1.5 px-2 py-0.5 rounded-full bg-neon-soft border border-neon-pink/30 text-[9px] font-mono font-extrabold text-neon-pink text-center">
+                OFFICIAL SHINOBI PHOTO · 승인 완료 👍
+              </div>
+            </div>
+
+            <div class="pt-0.5">
+              <h3 class="text-2xl font-black text-ink-primary">
+                예삐 <span class="text-sm font-normal text-ink-muted">(Yeppi)</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-neon-pink font-bold mt-0.5">
+                소속: 나뭇잎 마을 · 아카이브 부대
+              </p>
+              <p class="text-xs text-ink-secondary mt-1.5 leading-relaxed">
+                닌자의 길: “한 번 시작한 기록과 창작은 끝까지 완성해 낸다!”
+              </p>
+              <div class="mt-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-light-subtle border border-light-border text-[11px] font-mono text-ink-secondary">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>전공 술법: 기획 · UI조율 · 합창지휘</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 보유 주특기 술법 (작업 철학 연결) -->
+          <div class="space-y-2.5 bg-light-subtle rounded-2xl p-4 border border-light-border mb-5">
+            <div class="text-xs font-mono text-neon-pink font-bold uppercase tracking-wider">
+              ⚡ 메이커 주특기 술법 (Jutsu)
+            </div>
+            <div class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              <strong class="text-ink-primary">• 환술 · 감각적인 UI 조율:</strong> 눈이 편안한 라이트 그레이와 네온 핑크의 균형을 맞추는 디자인 감각
+            </div>
+            <div class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              <strong class="text-ink-primary">• 다중 환영분신술 · 올인원 기획:</strong> 타이머와 기록장을 하나로 묶어내는 유연한 실행력
+            </div>
+            <div class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              <strong class="text-ink-primary">• 영감 봉인 기록의 술:</strong> 스쳐 지나가는 감상과 아이디어를 웹앱에 영구 기록
+            </div>
+          </div>
+
+          <!-- 차크라 충전 & 닌자 명언 위젯 -->
+          <div class="bg-neon-soft/45 rounded-2xl p-4 border border-neon-pink/30">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-bold text-ink-primary">🔥 오늘의 덕질 & 작업 차크라</span>
+              <span id="chakra-level" class="text-xs font-mono font-extrabold text-neon-pink">100% MAX</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-white border border-neon-pink/20 overflow-hidden mb-3">
+              <div id="chakra-bar" class="h-full bg-gradient-to-r from-neon-pink to-pink-400 transition-all duration-500" style="width: 100%;"></div>
+            </div>
+            <p id="naruto-quote" class="text-xs sm:text-sm text-ink-primary font-diary mb-3 min-h-[2.4rem] flex items-center">
+              “기록하고 만드는 것이 내 닌자의 길이다…! 👍”
+            </p>
+            <button onclick="generateNarutoQuote()" class="w-full py-2.5 px-3 rounded-xl bg-neon-pink hover:bg-neon-dark text-white text-xs font-bold shadow-neon-sm transition-all flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-bolt"></i>
+              <span>차크라 충전 & 닌자 명언 뽑기</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 우측: 좋아하는 것들 (취향 카드 & 나루토 최애 카드) -->
+        <div class="lg:col-span-7 space-y-4">
+          <!-- 나루토 덕질 & 작업 철학 하이라이트 카드 (구글 드라이브 이미지 3 포함) -->
+          <div class="rounded-3xl p-6 bg-white border-2 border-neon-pink/40 shadow-card relative overflow-hidden group">
+            <div class="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
+              <div
+                onclick="openLightbox('https://drive.google.com/thumbnail?id=1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9&sz=w800', 'https://lh3.googleusercontent.com/d/1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9', '요즘 최애 애니메이션 〈나루토〉 👍', '기록하고 만드는 것이 내 닌자의 길이다…!')"
+                class="w-full sm:w-44 h-44 sm:h-36 rounded-2xl overflow-hidden border-2 border-neon-pink/35 shrink-0 shadow-neon-sm relative cursor-zoom-in bg-neon-soft"
+              >
+                <img
+                  src="https://drive.google.com/thumbnail?id=1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9&sz=w800"
+                  data-fallback="https://lh3.googleusercontent.com/d/1VJg6oGm7-w3UUBI4FmZnhzXBgI5DIgA9"
+                  alt="나루토 따봉 하이라이트"
+                  onload="this.classList.add('loaded')"
+                  onerror="handleDriveImageError(this, 'NARUTO 👍')"
+                  class="img-smooth w-full h-full object-cover object-center group-hover:scale-110"
+                />
+                <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-ink-primary/80 backdrop-blur-sm text-white font-mono text-[10px] font-bold">
+                  #MY_FAVORITE
+                </span>
+              </div>
+
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                  <span class="w-7 h-7 rounded-lg bg-neon-pink text-white flex items-center justify-center text-sm shadow-neon-sm shrink-0">
+                    🍥
+                  </span>
+                  <h3 class="text-lg font-black text-ink-primary">애니메이션 · 요즘 최애 〈나루토〉</h3>
+                  <span class="px-2.5 py-0.5 rounded-full bg-neon-soft text-neon-pink text-[11px] font-extrabold border border-neon-pink/30">
+                    최애 1순위
+                  </span>
+                </div>
+                <p class="text-xs font-diary text-neon-pink font-bold mb-2">
+                  “기록하고 만드는 것이 내 닌자의 길이다…! 👍”
+                </p>
+                <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                  요즘 가장 큰 에너지를 얻는 콘텐츠는 단연 <strong class="text-neon-pink font-bold">나루토(NARUTO)</strong>입니다. 어떤 어려움 앞에서도 포기하지 않는 근성과 동료들과의 유대를 보며, 저 역시 기획한 웹앱과 무대를 끝까지 완성해 내는 추진력을 배웁니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 나머지 4가지 취향 카드 그리드 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- 독서 -->
+            <div class="essay-card rounded-2xl p-5">
+              <div class="flex items-center gap-3 mb-2.5">
+                <span class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-lg">📚</span>
+                <h4 class="font-extrabold text-ink-primary text-base">독서 (Reading)</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                마음에 닿는 문장을 만나면 밑줄을 긋고 콘텐츠 기록장에 옮겨 적습니다. 차분히 사유하며 시야를 넓히는 소중한 습관입니다.
+              </p>
+            </div>
+
+            <!-- 영화 -->
+            <div class="essay-card rounded-2xl p-5">
+              <div class="flex items-center gap-3 mb-2.5">
+                <span class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-lg">🎬</span>
+                <h4 class="font-extrabold text-ink-primary text-base">영화 (Cinema)</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                아름다운 미장센과 여운이 남는 서사를 사랑합니다. 엔딩 크레딧이 올라간 뒤에도 오래 곱씹게 되는 장면들을 기록합니다.
+              </p>
+            </div>
+
+            <!-- 소설 -->
+            <div class="essay-card rounded-2xl p-5">
+              <div class="flex items-center gap-3 mb-2.5">
+                <span class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-lg">📖</span>
+                <h4 class="font-extrabold text-ink-primary text-base">소설 (Novel)</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                탄탄한 세계관과 입체적인 인물들이 엮어내는 이야기 속으로 떠나는 여행! 복선이 회수되는 순간의 짜릿함을 즐깁니다.
+              </p>
+            </div>
+
+            <!-- 음악 감상 -->
+            <div class="essay-card rounded-2xl p-5">
+              <div class="flex items-center gap-3 mb-2.5">
+                <span class="w-10 h-10 rounded-xl bg-pink-50 border border-pink-200 flex items-center justify-center text-lg">🎧</span>
+                <h4 class="font-extrabold text-ink-primary text-base">음악 감상 (Music)</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                합창 화음의 울림부터 작업할 때 집중력을 높여주는 연주곡, 그리고 가슴을 뛰게 하는 나루토 OST까지 언제나 음악과 함께합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 5: 에필로그 & 차크라 방명록 + 샘플 소셜 아이콘
+    ====================================================================== -->
+    <section id="guestbook" class="scroll-mt-24">
+      <!-- 에필로그: 앞으로 만들어 갈 다음 페이지 -->
+      <div class="essay-card rounded-3xl p-6 sm:p-9 mb-10 bg-gradient-to-br from-white via-white to-neon-soft/30">
+        <span class="font-mono text-xs uppercase tracking-widest text-neon-pink font-bold">05 // EPILOGUE & NEXT PAGE</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-ink-primary mt-1 mb-3">
+          앞으로 만들어 갈 다음 페이지
+        </h2>
+        <p class="text-sm sm:text-base text-ink-secondary leading-relaxed max-w-3xl">
+          지금까지 기록해 온 취향의 조각들과 직접 만든 웹앱, 그리고 합창부 60기 단원들과 함께 완성한 여름연주회의 기억은 앞으로 제가 어떤 일을 하든 든든한 밑거름이 될 것입니다. 앞으로도 일상에 다정한 편리함을 더하는 웹앱을 만들고, 사람들과 함께 빛나는 순간을 기획하는 크리에이터로 성장해 나가겠습니다.
+        </p>
+      </div>
+
+      <!-- 차크라 & 한 줄 방명록 -->
+      <div class="essay-card rounded-3xl p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-black text-ink-primary">
+              예삐에게 차크라 & 한 줄 남기기
+            </h3>
+            <p class="text-xs sm:text-sm text-ink-muted mt-0.5">
+              자기소개서를 읽어주셔서 감사합니다! 응원 메시지나 추천 콘텐츠를 남겨주세요.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-soft text-neon-pink text-xs font-mono font-bold border border-neon-pink/25 self-start sm:self-center">
+            <i class="fa-solid fa-bolt"></i> CHAKRA GUESTBOOK
+          </span>
+        </div>
+
+        <form id="guestbook-form" class="grid grid-cols-1 sm:grid-cols-12 gap-3 mb-6">
+          <input
+            type="text"
+            id="guest-name"
+            placeholder="닉네임 (예: 60기 동기)"
+            maxlength="16"
+            required
+            class="sm:col-span-3 px-4 py-3 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:bg-white focus:outline-none text-sm text-ink-primary placeholder-ink-muted transition"
+          />
+          <select
+            id="guest-chakra"
+            aria-label="차크라 지수 선택"
+            class="sm:col-span-3 px-3.5 py-3 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:bg-white focus:outline-none text-sm font-semibold text-ink-primary transition"
+          >
+            <option value="100% MAX 🔥">차크라 100% MAX 🔥</option>
+            <option value="200% 선인모드 ⚡">차크라 200% 선인모드 ⚡</option>
+            <option value="150% 나선수리검 🍥">차크라 150% 나선수리검 🍥</option>
+            <option value="80% 따뜻한 응원 💖">차크라 80% 따뜻한 응원 💖</option>
+            <option value="50% 잔잔한 휴식 🍃">차크라 50% 잔잔한 휴식 🍃</option>
+          </select>
+          <input
+            type="text"
+            id="guest-msg"
+            placeholder="예삐에게 전할 한 줄 응원이나 추천 작품을 적어주세요!"
+            maxlength="80"
+            required
+            class="sm:col-span-4 px-4 py-3 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:bg-white focus:outline-none text-sm text-ink-primary placeholder-ink-muted transition"
+          />
+          <button type="submit" class="sm:col-span-2 py-3 px-4 rounded-xl bg-neon-pink hover:bg-neon-dark text-white font-bold text-sm shadow-neon-sm transition-all flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>남기기</span>
+          </button>
+        </form>
+
+        <!-- 방명록 피드 -->
+        <div id="guestbook-list" class="space-y-3 max-h-72 overflow-y-auto pr-1">
+          <!-- JS로 렌더링됨 -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 & 추후 수정 가능한 샘플 소셜 아이콘 -->
+  <footer class="mt-16 py-12 px-4 border-t border-light-border bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-xs font-mono text-ink-muted mb-4">
+        CONNECT WITH YEPPI <span class="text-neon-pink font-semibold">(추후 실제 링크로 수정 가능한 샘플 아이콘)</span>
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+        <button onclick="copySocialSample('이메일', 'yeppi.archive@example.com')" class="group flex flex-col items-center gap-1.5">
+          <span class="w-12 h-12 rounded-2xl bg-light-subtle group-hover:bg-neon-pink text-ink-secondary group-hover:text-white border border-light-border group-hover:border-neon-pink flex items-center justify-center text-lg transition-all shadow-sm group-hover:shadow-neon-sm">
+            <i class="fa-solid fa-envelope"></i>
+          </span>
+          <span class="text-[11px] font-semibold text-ink-muted group-hover:text-neon-pink">이메일</span>
+        </button>
+
+        <button onclick="copySocialSample('깃허브', 'https://github.com/yeppi-archive')" class="group flex flex-col items-center gap-1.5">
+          <span class="w-12 h-12 rounded-2xl bg-light-subtle group-hover:bg-neon-pink text-ink-secondary group-hover:text-white border border-light-border group-hover:border-neon-pink flex items-center justify-center text-lg transition-all shadow-sm group-hover:shadow-neon-sm">
+            <i class="fa-brands fa-github"></i>
+          </span>
+          <span class="text-[11px] font-semibold text-ink-muted group-hover:text-neon-pink">깃허브</span>
+        </button>
+
+        <button onclick="copySocialSample('인스타그램', '@yeppi.space_sample')" class="group flex flex-col items-center gap-1.5">
+          <span class="w-12 h-12 rounded-2xl bg-light-subtle group-hover:bg-neon-pink text-ink-secondary group-hover:text-white border border-light-border group-hover:border-neon-pink flex items-center justify-center text-lg transition-all shadow-sm group-hover:shadow-neon-sm">
+            <i class="fa-brands fa-instagram"></i>
+          </span>
+          <span class="text-[11px] font-semibold text-ink-muted group-hover:text-neon-pink">인스타그램</span>
+        </button>
+
+        <button onclick="copySocialSample('블로그', 'https://blog.yeppi.archive')" class="group flex flex-col items-center gap-1.5">
+          <span class="w-12 h-12 rounded-2xl bg-light-subtle group-hover:bg-neon-pink text-ink-secondary group-hover:text-white border border-light-border group-hover:border-neon-pink flex items-center justify-center text-lg transition-all shadow-sm group-hover:shadow-neon-sm">
+            <i class="fa-solid fa-pen-nib"></i>
+          </span>
+          <span class="text-[11px] font-semibold text-ink-muted group-hover:text-neon-pink">블로그</span>
+        </button>
+      </div>
+
+      <p class="text-xs sm:text-sm text-ink-secondary">
+        © 2026 <span class="text-ink-primary font-bold">기록하고 만드는 것을 좋아하는 예삐의 공간 (YEPPI ARCHIVE)</span>.
+      </p>
+      <p class="text-[11px] text-ink-muted mt-1">
+        Crafted with 라이트 그레이, 네온 핑크, 합창부 60기의 하모니, 그리고 나뭇잎 마을의 닌자 정신 🍥
+      </p>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       실제 동작하는 인터랙티브 웹앱 런처 모달 (YEPPI ARCHIVE ALL-IN-ONE)
+  ====================================================================== -->
+  <div id="webapp-launcher-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-2 sm:p-5 bg-gray-950/75 backdrop-blur-md">
+    <div class="bg-light-bg border-2 border-neon-pink/45 rounded-3xl w-full max-w-6xl h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+      
+      <!-- 런처 상단 헤더 & 앱 전환 탭 -->
+      <div class="bg-white border-b border-light-border px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-neon-pink text-white flex items-center justify-center font-bold shadow-neon-sm">
+            <i class="fa-solid fa-rocket text-sm"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-black text-sm sm:text-base text-ink-primary">YEPPI ARCHIVE LIVE</span>
+              <span class="px-2 py-0.5 rounded-full bg-neon-soft text-neon-pink font-mono text-[10px] font-bold border border-neon-pink/30">
+                실시간 웹앱 실행 중
+              </span>
+            </div>
+            <p class="text-[11px] text-ink-muted hidden sm:block">
+              예삐가 직접 설계·구현한 두 웹앱을 전환하며 바로 체험해 보세요!
+            </p>
+          </div>
+        </div>
+
+        <!-- 앱 전환 스위치 + 백그라운드 미니 타이머 배지 + 외부 URL 연결 설정 -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <!-- 실행 중인 미니 타이머 배지 -->
+          <div id="launcher-mini-timer" onclick="switchLauncherApp('timer')" class="hidden cursor-pointer items-center gap-1.5 px-3 py-1.5 rounded-full bg-neon-soft border border-neon-pink/40 text-neon-pink font-mono text-xs font-extrabold animate-pulse">
+            <span id="mini-timer-mascot">🐰</span>
+            <span id="mini-timer-text">25:00</span>
+          </div>
+
+          <div class="inline-flex p-1 rounded-2xl bg-light-bg border border-light-border">
+            <button id="tab-btn-archive" onclick="switchLauncherApp('archive')" class="px-3 sm:px-4 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 bg-neon-pink text-white shadow-neon-sm">
+              <i class="fa-solid fa-book-bookmark"></i>
+              <span>나만의 콘텐츠 기록장</span>
+            </button>
+            <button id="tab-btn-timer" onclick="switchLauncherApp('timer')" class="px-3 sm:px-4 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 text-ink-secondary hover:text-neon-pink">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <span>집중 공간 타이머</span>
+            </button>
+          </div>
+
+          <!-- 외부 배포 URL 설정 토글 버튼 -->
+          <button onclick="toggleExternalUrlBar()" title="외부 배포 링크 연결 설정" class="p-2.5 rounded-xl bg-light-subtle hover:bg-neon-soft text-ink-secondary hover:text-neon-pink border border-light-border transition text-xs">
+            <i class="fa-solid fa-link"></i>
+          </button>
+
+          <!-- 런처 닫기 -->
+          <button onclick="closeWebAppLauncher()" aria-label="웹앱 닫기" class="px-3.5 py-2 rounded-xl bg-ink-primary hover:bg-neon-pink text-white text-xs font-bold transition flex items-center gap-1.5">
+            <i class="fa-solid fa-xmark"></i>
+            <span class="hidden sm:inline">자기소개서로 돌아가기</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 선택적 외부 배포 링크(URL) 연결 바 -->
+      <div id="external-url-bar" class="hidden bg-neon-soft/45 border-b border-neon-pink/25 px-4 sm:px-6 py-2.5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 text-xs shrink-0">
+        <div class="flex items-center gap-2 text-ink-primary font-semibold">
+          <i class="fa-solid fa-globe text-neon-pink"></i>
+          <span id="ext-url-label">외부 배포 URL 연결 (선택):</span>
+        </div>
+        <div class="flex items-center gap-2 flex-1 max-w-2xl">
+          <input id="ext-url-input" type="url" placeholder="예: https://yeppi-archive.vercel.app (비워두면 내장 웹앱 실행)" class="flex-1 px-3 py-1.5 rounded-xl bg-white border border-light-border focus:border-neon-pink focus:outline-none text-xs" />
+          <button onclick="saveExternalUrl()" class="px-3 py-1.5 rounded-xl bg-neon-pink text-white font-bold hover:bg-neon-dark transition shrink-0">저장</button>
+          <a id="ext-url-open-btn" href="#" target="_blank" rel="noopener noreferrer" class="hidden px-3 py-1.5 rounded-xl bg-ink-primary text-white font-bold hover:bg-neon-pink transition shrink-0 items-center gap-1">
+            <span>새 창 열기</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 런처 본문 스크롤 영역 -->
+      <div class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 bg-dot-grid">
+
+        <!-- =================================================================
+             APP 1: 나만의 콘텐츠 기록장 (My Content Archive)
+        ================================================================== -->
+        <div id="app-view-archive" class="max-w-5xl mx-auto space-y-6">
+          <!-- 상단 기획 의도 배너 & 새 기록 버튼 -->
+          <div class="bg-white rounded-3xl p-5 sm:p-6 border border-light-border shadow-card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2.5 py-0.5 rounded-md bg-neon-soft text-neon-pink font-mono text-[11px] font-bold">APP 01</span>
+                <h3 class="text-lg sm:text-xl font-black text-ink-primary">나만의 콘텐츠 기록장</h3>
+              </div>
+              <p class="text-xs sm:text-sm text-ink-secondary">
+                독서·영화·애니·소설·음악 감상을 별점과 메모로 남기고 통계를 확인하는 아카이브 (브라우저 자동 저장 지원)
+              </p>
+            </div>
+            <button onclick="openRecordFormModal()" class="px-5 py-3 rounded-2xl bg-neon-pink hover:bg-neon-dark text-white font-bold text-xs sm:text-sm shadow-neon-sm transition flex items-center justify-center gap-2 shrink-0">
+              <i class="fa-solid fa-plus"></i>
+              <span>새 콘텐츠 기록하기</span>
+            </button>
+          </div>
+
+          <!-- 통계 대시보드 4칸 -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div class="bg-white rounded-2xl p-4 border border-light-border shadow-sm">
+              <span class="text-xs text-ink-muted font-semibold">총 기록 콘텐츠</span>
+              <div class="mt-1 flex items-baseline gap-1">
+                <span id="stat-total" class="text-2xl sm:text-3xl font-black text-ink-primary">0</span>
+                <span class="text-xs font-bold text-neon-pink">개</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-4 border border-light-border shadow-sm">
+              <span class="text-xs text-ink-muted font-semibold">감상 완료</span>
+              <div class="mt-1 flex items-baseline gap-1">
+                <span id="stat-completed" class="text-2xl sm:text-3xl font-black text-ink-primary">0</span>
+                <span class="text-xs font-bold text-emerald-600">편</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-4 border border-light-border shadow-sm">
+              <span class="text-xs text-ink-muted font-semibold">평균 별점</span>
+              <div class="mt-1 flex items-baseline gap-1">
+                <span class="text-lg text-neon-pink">★</span>
+                <span id="stat-avg-rating" class="text-2xl sm:text-3xl font-black text-ink-primary">0.0</span>
+                <span class="text-xs text-ink-muted">/ 5.0</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-4 border border-light-border shadow-sm">
+              <span class="text-xs text-ink-muted font-semibold">최다 기록 분야</span>
+              <div class="mt-1">
+                <span id="stat-top-cat" class="text-lg sm:text-xl font-black text-neon-pink">-</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 필터 및 검색 바 -->
+          <div class="bg-white rounded-3xl p-4 sm:p-5 border border-light-border shadow-sm space-y-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <!-- 카테고리 필터 -->
+              <div id="archive-cat-filters" class="flex flex-wrap gap-1.5">
+                <button data-cat="전체" onclick="setArchiveCatFilter('전체')" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-neon-pink text-white shadow-neon-sm transition">전체</button>
+                <button data-cat="독서" onclick="setArchiveCatFilter('독서')" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-light-subtle text-ink-secondary hover:text-neon-pink border border-light-border transition">📚 독서</button>
+                <button data-cat="영화" onclick="setArchiveCatFilter('영화')" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-light-subtle text-ink-secondary hover:text-neon-pink border border-light-border transition">🎬 영화</button>
+                <button data-cat="애니메이션" onclick="setArchiveCatFilter('애니메이션')" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-light-subtle text-ink-secondary hover:text-neon-pink border border-light-border transition">🍥 애니메이션</button>
+                <button data-cat="소설" onclick="setArchiveCatFilter('소설')" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-light-subtle text-ink-secondary hover:text-neon-pink border border-light-border transition">📖 소설</button>
+                <button data-cat="음악" onclick="setArchiveCatFilter('음악')" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-light-subtle text-ink-secondary hover:text-neon-pink border border-light-border transition">🎧 음악</button>
+              </div>
+
+              <!-- 진행 상태 필터 -->
+              <select id="archive-status-filter" onchange="renderArchiveRecords()" class="px-3.5 py-1.5 rounded-xl bg-light-subtle border border-light-border text-xs font-bold text-ink-primary focus:border-neon-pink focus:outline-none">
+                <option value="전체">상태: 전체 보기</option>
+                <option value="완료">✅ 감상 완료</option>
+                <option value="보는 중">🔥 감상 중</option>
+                <option value="찜">💖 보고 싶은 찜</option>
+              </select>
+            </div>
+
+            <!-- 실시간 검색 -->
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-muted text-xs"></i>
+              <input
+                type="text"
+                id="archive-search-input"
+                oninput="renderArchiveRecords()"
+                placeholder="작품 제목이나 감상평 메모 키워드로 실시간 검색해 보세요..."
+                class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:bg-white focus:outline-none text-xs sm:text-sm text-ink-primary"
+              />
+            </div>
+          </div>
+
+          <!-- 기록 카드 목록 -->
+          <div id="archive-records-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- JS 렌더링 -->
+          </div>
+        </div>
+
+        <!-- =================================================================
+             APP 2: 예삐의 집중 공간 타이머 (MONGLE Focus Timer)
+        ================================================================== -->
+        <div id="app-view-timer" class="hidden max-w-4xl mx-auto space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            
+            <!-- 좌측: 원형 프로그레스 타이머 카드 -->
+            <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-light-border shadow-card text-center">
+              <!-- 모드 선택 필 -->
+              <div class="inline-flex p-1 rounded-2xl bg-light-bg border border-light-border mb-6">
+                <button onclick="setTimerMode('focus', 25)" id="mode-btn-focus" class="timer-mode-btn px-4 py-1.5 rounded-xl text-xs font-extrabold bg-neon-pink text-white shadow-neon-sm transition">
+                  🔥 집중 (25분)
+                </button>
+                <button onclick="setTimerMode('short', 5)" id="mode-btn-short" class="timer-mode-btn px-4 py-1.5 rounded-xl text-xs font-extrabold text-ink-secondary hover:text-neon-pink transition">
+                  🍃 짧은 휴식 (5분)
+                </button>
+                <button onclick="setTimerMode('long', 15)" id="mode-btn-long" class="timer-mode-btn px-4 py-1.5 rounded-xl text-xs font-extrabold text-ink-secondary hover:text-neon-pink transition">
+                  ☕ 긴 휴식 (15분)
+                </button>
+              </div>
+
+              <!-- 귀여운 마스코트 선택기 -->
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span class="text-xs text-ink-muted font-semibold">함께 집중할 친구:</span>
+                <button onclick="setTimerMascot('🐰', '토끼와 함께 깡총깡총 집중 모드!')" class="mascot-btn w-8 h-8 rounded-xl bg-neon-soft border border-neon-pink text-base flex items-center justify-center transition">🐰</button>
+                <button onclick="setTimerMascot('🐻', '곰돌이처럼 묵직하게 몰입하는 시간!')" class="mascot-btn w-8 h-8 rounded-xl bg-light-subtle border border-light-border text-base flex items-center justify-center hover:border-neon-pink transition">🐻</button>
+                <button onclick="setTimerMascot('🐱', '고양이처럼 차분하게 페이지를 넘겨요!')" class="mascot-btn w-8 h-8 rounded-xl bg-light-subtle border border-light-border text-base flex items-center justify-center hover:border-neon-pink transition">🐱</button>
+              </div>
+
+              <!-- 원형 SVG 프로그레스 링 -->
+              <div class="relative w-56 h-56 sm:w-64 sm:h-64 mx-auto my-4 flex items-center justify-center">
+                <svg class="w-full h-full -rotate-90" viewBox="0 0 220 220">
+                  <circle cx="110" cy="110" r="96" stroke="#F3F4F6" stroke-width="12" fill="none" />
+                  <circle
+                    id="timer-progress-circle"
+                    cx="110"
+                    cy="110"
+                    r="96"
+                    stroke="#FF2E93"
+                    stroke-width="12"
+                    stroke-linecap="round"
+                    fill="none"
+                    stroke-dasharray="603.19"
+                    stroke-dashoffset="0"
+                    class="transition-all duration-500"
+                  />
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <span id="timer-display-mascot" class="text-3xl mb-1">🐰</span>
+                  <span id="timer-display-time" class="font-mono text-4xl sm:text-5xl font-black text-ink-primary tracking-tight">25:00</span>
+                  <span id="timer-display-status" class="text-xs font-bold text-neon-pink mt-1.5">준비 완료 · 시작을 눌러주세요</span>
+                </div>
+              </div>
+
+              <!-- 시작 / 일시정지 / 초기화 컨트롤 -->
+              <div class="flex items-center justify-center gap-3 mt-5">
+                <button id="timer-start-btn" onclick="toggleTimer()" class="px-7 py-3.5 rounded-2xl bg-neon-pink hover:bg-neon-dark text-white font-extrabold text-sm shadow-neon transition flex items-center gap-2">
+                  <i id="timer-start-icon" class="fa-solid fa-play"></i>
+                  <span id="timer-start-label">집중 시작</span>
+                </button>
+                <button onclick="resetTimer()" class="px-4 py-3.5 rounded-2xl bg-light-subtle hover:bg-gray-200 text-ink-secondary font-bold text-sm border border-light-border transition flex items-center gap-1.5">
+                  <i class="fa-solid fa-rotate-right"></i>
+                  <span>초기화</span>
+                </button>
+              </div>
+
+              <!-- 빠른 시간 프리셋 -->
+              <div class="mt-6 pt-5 border-t border-light-border flex flex-wrap items-center justify-center gap-2">
+                <span class="text-[11px] font-mono text-ink-muted mr-1">PRESET:</span>
+                <button onclick="setTimerMode('focus', 10)" class="px-3 py-1 rounded-lg bg-light-subtle hover:bg-neon-soft text-xs font-bold text-ink-secondary hover:text-neon-pink border border-light-border transition">10분</button>
+                <button onclick="setTimerMode('focus', 25)" class="px-3 py-1 rounded-lg bg-light-subtle hover:bg-neon-soft text-xs font-bold text-ink-secondary hover:text-neon-pink border border-light-border transition">25분</button>
+                <button onclick="setTimerMode('focus', 45)" class="px-3 py-1 rounded-lg bg-light-subtle hover:bg-neon-soft text-xs font-bold text-ink-secondary hover:text-neon-pink border border-light-border transition">45분</button>
+                <button onclick="setTimerMode('focus', 60)" class="px-3 py-1 rounded-lg bg-light-subtle hover:bg-neon-soft text-xs font-bold text-ink-secondary hover:text-neon-pink border border-light-border transition">60분</button>
+              </div>
+            </div>
+
+            <!-- 우측: Web Audio API 집중 사운드 & 기록장 원클릭 연동 -->
+            <div class="lg:col-span-5 space-y-5">
+              <!-- 집중 사운드 합성기 -->
+              <div class="bg-white rounded-3xl p-6 border border-light-border shadow-card">
+                <div class="flex items-center justify-between mb-3">
+                  <div>
+                    <span class="font-mono text-[10px] font-bold text-neon-pink uppercase">WEB AUDIO SYNTHESIZER</span>
+                    <h4 class="text-base font-black text-ink-primary">집중 앰비언스 사운드 ♫</h4>
+                  </div>
+                  <button onclick="stopAllFocusSounds()" class="px-2.5 py-1 rounded-lg bg-light-subtle hover:bg-neon-soft text-[11px] font-bold text-ink-muted hover:text-neon-pink border border-light-border transition">
+                    전체 끄기
+                  </button>
+                </div>
+                <p class="text-xs text-ink-muted mb-4">
+                  별도 음원 파일 없이 브라우저 자체 오디오 엔진으로 실시간 합성되는 백색소음입니다.
+                </p>
+
+                <div class="grid grid-cols-2 gap-2.5 mb-4">
+                  <button onclick="toggleFocusSound('rain')" id="sound-btn-rain" class="sound-toggle-btn p-3 rounded-2xl bg-light-subtle border border-light-border text-left hover:border-neon-pink/50 transition">
+                    <div class="text-lg mb-1">🌧️</div>
+                    <div class="text-xs font-extrabold text-ink-primary">창밖의 빗소리</div>
+                    <div class="text-[10px] text-ink-muted sound-state">OFF</div>
+                  </button>
+                  <button onclick="toggleFocusSound('cafe')" id="sound-btn-cafe" class="sound-toggle-btn p-3 rounded-2xl bg-light-subtle border border-light-border text-left hover:border-neon-pink/50 transition">
+                    <div class="text-lg mb-1">☕</div>
+                    <div class="text-xs font-extrabold text-ink-primary">아늑한 카페</div>
+                    <div class="text-[10px] text-ink-muted sound-state">OFF</div>
+                  </button>
+                  <button onclick="toggleFocusSound('forest')" id="sound-btn-forest" class="sound-toggle-btn p-3 rounded-2xl bg-light-subtle border border-light-border text-left hover:border-neon-pink/50 transition">
+                    <div class="text-lg mb-1">🌿</div>
+                    <div class="text-xs font-extrabold text-ink-primary">숲속 바람소리</div>
+                    <div class="text-[10px] text-ink-muted sound-state">OFF</div>
+                  </button>
+                  <button onclick="toggleFocusSound('white')" id="sound-btn-white" class="sound-toggle-btn p-3 rounded-2xl bg-light-subtle border border-light-border text-left hover:border-neon-pink/50 transition">
+                    <div class="text-lg mb-1">📻</div>
+                    <div class="text-xs font-extrabold text-ink-primary">부드러운 백색소음</div>
+                    <div class="text-[10px] text-ink-muted sound-state">OFF</div>
+                  </button>
+                </div>
+
+                <!-- 볼륨 슬라이더 -->
+                <div class="flex items-center gap-3 bg-light-subtle px-3.5 py-2.5 rounded-xl border border-light-border">
+                  <i class="fa-solid fa-volume-low text-neon-pink text-xs"></i>
+                  <input id="sound-volume-slider" type="range" min="0" max="100" value="45" oninput="updateFocusSoundVolume(this.value)" class="w-full accent-[#FF2E93] cursor-pointer h-1.5 bg-gray-200 rounded-lg" />
+                  <span id="sound-volume-label" class="font-mono text-[11px] font-bold text-ink-secondary w-8 text-right">45%</span>
+                </div>
+              </div>
+
+              <!-- 예삐 아카이브 핵심 시너지: 집중 후 바로 콘텐츠 기록하기 -->
+              <div class="bg-gradient-to-br from-white to-neon-soft/50 rounded-3xl p-6 border-2 border-neon-pink/35 shadow-card">
+                <span class="px-2.5 py-0.5 rounded-full bg-neon-pink text-white font-mono text-[10px] font-bold">
+                  YEPPI ARCHIVE SYNERGY
+                </span>
+                <h4 class="text-base font-black text-ink-primary mt-2 mb-1.5">
+                  몰입한 콘텐츠를 바로 기록할까요?
+                </h4>
+                <p class="text-xs text-ink-secondary leading-relaxed mb-4">
+                  책을 읽거나 영화를 감상한 여운이 사라지기 전에 ‘나만의 콘텐츠 기록장’으로 즉시 이동해 별점과 감상평을 남겨보세요!
+                </p>
+                <button onclick="jumpFromTimerToRecord()" class="w-full py-3 px-4 rounded-2xl bg-ink-primary hover:bg-neon-pink text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-sm">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  <span>방금 집중한 콘텐츠 바로 기록하기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 콘텐츠 기록 추가 / 수정 서브 모달 -->
+  <div id="record-form-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-gray-950/65 backdrop-blur-sm">
+    <div class="bg-white border border-neon-pink/40 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl relative">
+      <button onclick="closeRecordFormModal()" aria-label="기록 폼 닫기" class="absolute top-5 right-5 w-8 h-8 rounded-xl bg-light-bg hover:bg-neon-pink text-ink-secondary hover:text-white flex items-center justify-center transition">
+        <i class="fa-solid fa-xmark text-xs"></i>
+      </button>
+
+      <span class="font-mono text-[11px] font-bold text-neon-pink uppercase">YEPPI ARCHIVE ENTRY</span>
+      <h3 id="record-form-title" class="text-xl font-black text-ink-primary mb-4">새 콘텐츠 기록하기</h3>
+
+      <form id="record-entry-form" class="space-y-3.5">
+        <input type="hidden" id="record-edit-id" value="" />
+
+        <div>
+          <label class="block text-xs font-bold text-ink-secondary mb-1">작품 제목 *</label>
+          <input type="text" id="rec-title" required maxlength="50" placeholder="예: 나루토 질풍전, 데미안, 한 페이지가 될 수 있게" class="w-full px-3.5 py-2.5 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:bg-white focus:outline-none text-sm" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-ink-secondary mb-1">카테고리</label>
+            <select id="rec-category" class="w-full px-3 py-2.5 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:outline-none text-sm font-semibold">
+              <option value="독서">📚 독서</option>
+              <option value="영화">🎬 영화</option>
+              <option value="애니메이션">🍥 애니메이션</option>
+              <option value="소설">📖 소설</option>
+              <option value="음악">🎧 음악</option>
+              <option value="기타">✨ 기타</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-ink-secondary mb-1">진행 상태</label>
+            <select id="rec-status" class="w-full px-3 py-2.5 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:outline-none text-sm font-semibold">
+              <option value="완료">✅ 감상 완료</option>
+              <option value="보는 중">🔥 감상 중</option>
+              <option value="찜">💖 보고 싶은 찜</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-ink-secondary mb-1">나의 별점</label>
+            <select id="rec-rating" class="w-full px-3 py-2.5 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:outline-none text-sm font-bold text-neon-pink">
+              <option value="5">★★★★★ (5.0)</option>
+              <option value="4">★★★★☆ (4.0)</option>
+              <option value="3">★★★☆☆ (3.0)</option>
+              <option value="2">★★☆☆☆ (2.0)</option>
+              <option value="1">★☆☆☆☆ (1.0)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-ink-secondary mb-1">감상 날짜</label>
+            <input type="date" id="rec-date" class="w-full px-3 py-2.5 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:outline-none text-xs sm:text-sm" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-ink-secondary mb-1">한 줄 감상평 & 메모 *</label>
+          <textarea id="rec-memo" rows="3" required maxlength="200" placeholder="기억하고 싶은 명대사, 장면, 또는 나만의 감상평을 남겨보세요!" class="w-full px-3.5 py-2.5 rounded-xl bg-light-subtle border border-light-border focus:border-neon-pink focus:bg-white focus:outline-none text-sm resize-none"></textarea>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="closeRecordFormModal()" class="px-4 py-2.5 rounded-xl bg-light-bg text-ink-secondary font-bold text-xs hover:bg-gray-200 transition">취소</button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl bg-neon-pink hover:bg-neon-dark text-white font-bold text-xs shadow-neon-sm transition">기록 저장하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 사진 확대 라이트박스 모달 -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-gray-950/80 backdrop-blur-md">
+    <div class="max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-neon-pink/40 relative">
+      <button onclick="closeLightbox()" aria-label="사진 닫기" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-ink-primary/80 hover:bg-neon-pink text-white flex items-center justify-center transition shadow-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="bg-gray-900 flex items-center justify-center max-h-[72vh] overflow-hidden">
+        <img id="lightbox-img" src="" alt="확대 사진" class="max-h-[72vh] w-auto object-contain" />
+      </div>
+      <div class="p-5 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <h4 id="lightbox-title" class="font-extrabold text-base sm:text-lg text-ink-primary">사진 제목</h4>
+          <p id="lightbox-caption" class="text-xs sm:text-sm text-ink-muted mt-0.5">사진 설명</p>
+        </div>
+        <button onclick="closeLightbox()" class="self-end sm:self-center px-4 py-2 rounded-xl bg-light-bg hover:bg-neon-pink text-ink-primary hover:text-white text-xs font-bold transition">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 토스트 알림 -->
+  <div id="toast-box" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-3 px-5 py-3.5 rounded-2xl bg-ink-primary text-white text-xs sm:text-sm shadow-xl max-w-[92vw]">
+    <i class="fa-solid fa-circle-check text-neon-pink text-base shrink-0"></i>
+    <span id="toast-message">안내 메시지</span>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 3. 실제 동작하는 인터랙티브 웹앱 런처 (나만의 콘텐츠 기록장 & 집중 타이머)
+    // =========================================================================
+    let currentLauncherApp = 'archive';
+    const EXT_URL_STORAGE_KEY = 'yeppi_external_app_urls_v1';
+
+    function getSavedExternalUrls() {
+      try {
+        return JSON.parse(localStorage.getItem(EXT_URL_STORAGE_KEY) || '{}');
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function openWebAppLauncher(appKey) {
+      const modal = document.getElementById('webapp-launcher-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      switchLauncherApp(appKey || 'archive');
+      renderArchiveRecords();
+    }
+
+    function closeWebAppLauncher() {
+      const modal = document.getElementById('webapp-launcher-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function switchLauncherApp(appKey) {
+      currentLauncherApp = appKey;
+      const archiveView = document.getElementById('app-view-archive');
+      const timerView = document.getElementById('app-view-timer');
+      const btnArchive = document.getElementById('tab-btn-archive');
+      const btnTimer = document.getElementById('tab-btn-timer');
+
+      if (appKey === 'archive') {
+        archiveView.classList.remove('hidden');
+        timerView.classList.add('hidden');
+        btnArchive.className = 'px-3 sm:px-4 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 bg-neon-pink text-white shadow-neon-sm';
+        btnTimer.className = 'px-3 sm:px-4 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 text-ink-secondary hover:text-neon-pink';
+      } else {
+        archiveView.classList.add('hidden');
+        timerView.classList.remove('hidden');
+        btnTimer.className = 'px-3 sm:px-4 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 bg-neon-pink text-white shadow-neon-sm';
+        btnArchive.className = 'px-3 sm:px-4 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 text-ink-secondary hover:text-neon-pink';
+      }
+      syncExternalUrlBarUI();
+    }
+
+    function toggleExternalUrlBar() {
+      const bar = document.getElementById('external-url-bar');
+      bar.classList.toggle('hidden');
+      syncExternalUrlBarUI();
+    }
+
+    function syncExternalUrlBarUI() {
+      const urls = getSavedExternalUrls();
+      const currentUrl = urls[currentLauncherApp] || '';
+      const label = document.getElementById('ext-url-label');
+      const input = document.getElementById('ext-url-input');
+      const openBtn = document.getElementById('ext-url-open-btn');
+
+      label.textContent = currentLauncherApp === 'archive'
+        ? '콘텐츠 기록장 외부 배포 URL (선택):'
+        : '집중 공간 타이머 외부 배포 URL (선택):';
+      input.value = currentUrl;
+
+      if (currentUrl) {
+        openBtn.href = currentUrl;
+        openBtn.classList.remove('hidden');
+        openBtn.classList.add('inline-flex');
+      } else {
+        openBtn.classList.add('hidden');
+        openBtn.classList.remove('inline-flex');
+      }
+    }
+
+    function saveExternalUrl() {
+      const val = document.getElementById('ext-url-input').value.trim();
+      const urls = getSavedExternalUrls();
+      urls[currentLauncherApp] = val;
+      try {
+        localStorage.setItem(EXT_URL_STORAGE_KEY, JSON.stringify(urls));
+      } catch (e) {}
+      syncExternalUrlBarUI();
+      showToast(val ? '외부 웹앱 링크가 저장되었습니다! 오른쪽 [새 창 열기]로도 접속할 수 있어요.' : '외부 링크가 해제되어 내장 웹앱 모드로 유지됩니다.');
+    }
+
+    document.getElementById('webapp-launcher-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'webapp-launcher-modal') closeWebAppLauncher();
+    });
+
+    // =========================================================================
+    // 3-A. APP 1 로직: 나만의 콘텐츠 기록장 (localStorage 자동 저장)
+    // =========================================================================
+    const ARCHIVE_STORAGE_KEY = 'yeppi_content_archive_v1';
+    let selectedArchiveCat = '전체';
+
+    const defaultArchiveSeed = [
+      {
+        id: 'seed-1',
+        title: '나루토 & 나루토 질풍전',
+        category: '애니메이션',
+        status: '보는 중',
+        rating: 5,
+        date: '2026-11-18',
+        memo: '“내뱉은 말은 굽히지 않는다!” 포기하지 않는 근성과 동료들과의 유대가 언제 봐도 가슴을 뜨겁게 만든다. 👍'
+      },
+      {
+        id: 'seed-2',
+        title: '한 페이지가 될 수 있게 (합창부 60기 기수무대)',
+        category: '음악',
+        status: '완료',
+        rating: 5,
+        date: '2026-08-24',
+        memo: '60기 기장으로 기수무대를 직접 기획하며 동기들과 화음을 맞췄던 잊지 못할 여름연주회 대표곡!'
+      },
+      {
+        id: 'seed-3',
+        title: '데미안 (헤르만 헤세)',
+        category: '독서',
+        status: '완료',
+        rating: 5,
+        date: '2026-10-12',
+        memo: '새는 알에서 나오려고 투쟁한다. 스스로의 세계를 깨고 나아가는 용기에 대해 깊이 사유하게 된 인생 책.'
+      },
+      {
+        id: 'seed-4',
+        title: '인셉션 (Inception)',
+        category: '영화',
+        status: '완료',
+        rating: 4,
+        date: '2026-09-29',
+        memo: '꿈속의 꿈이라는 치밀한 설계와 한스 짐머의 웅장한 사운드트랙이 압도적인 여운을 남기는 명작.'
+      }
+    ];
+
+    function loadArchiveData() {
+      try {
+        const raw = localStorage.getItem(ARCHIVE_STORAGE_KEY);
+        if (!raw) {
+          localStorage.setItem(ARCHIVE_STORAGE_KEY, JSON.stringify(defaultArchiveSeed));
+          return [...defaultArchiveSeed];
+        }
+        return JSON.parse(raw);
+      } catch (e) {
+        return [...defaultArchiveSeed];
+      }
+    }
+
+    function saveArchiveData(records) {
+      try {
+        localStorage.setItem(ARCHIVE_STORAGE_KEY, JSON.stringify(records));
+      } catch (e) {}
+    }
+
+    function setArchiveCatFilter(cat) {
+      selectedArchiveCat = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = 'cat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-neon-pink text-white shadow-neon-sm transition';
+        } else {
+          btn.className = 'cat-pill px-3.5 py-1.5 rounded-full text-xs font-bold bg-light-subtle text-ink-secondary hover:text-neon-pink border border-light-border transition';
+        }
+      });
+      renderArchiveRecords();
+    }
+
+    function getCategoryBadgeHtml(cat) {
+      const map = {
+        '독서': '📚 독서',
+        '영화': '🎬 영화',
+        '애니메이션': '🍥 애니메이션',
+        '소설': '📖 소설',
+        '음악': '🎧 음악',
+        '기타': '✨ 기타'
+      };
+      return map[cat] || cat;
+    }
+
+    function getStatusBadgeHtml(status) {
+      if (status === '완료') return '<span class="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-bold">✅ 완료</span>';
+      if (status === '보는 중') return '<span class="px-2 py-0.5 rounded-md bg-neon-soft text-neon-pink border border-neon-pink/30 text-[11px] font-bold">🔥 보는 중</span>';
+      return '<span class="px-2 py-0.5 rounded-md bg-amber-50 text-amber-700 border border-amber-200 text-[11px] font-bold">💖 찜</span>';
+    }
+
+    function renderArchiveRecords() {
+      const allRecords = loadArchiveData();
+      const statusFilter = document.getElementById('archive-status-filter').value;
+      const keyword = document.getElementById('archive-search-input').value.trim().toLowerCase();
+
+      // 상단 통계 업데이트
+      document.getElementById('stat-total').textContent = allRecords.length;
+      const completedCount = allRecords.filter(r => r.status === '완료').length;
+      document.getElementById('stat-completed').textContent = completedCount;
+      const avgRating = allRecords.length
+        ? (allRecords.reduce((acc, r) => acc + Number(r.rating || 0), 0) / allRecords.length).toFixed(1)
+        : '0.0';
+      document.getElementById('stat-avg-rating').textContent = avgRating;
+
+      if (allRecords.length) {
+        const counts = {};
+        allRecords.forEach(r => { counts[r.category] = (counts[r.category] || 0) + 1; });
+        const topCat = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+        document.getElementById('stat-top-cat').textContent = getCategoryBadgeHtml(topCat);
+      } else {
+        document.getElementById('stat-top-cat').textContent = '-';
+      }
+
+      // 필터링 적용
+      const filtered = allRecords.filter(r => {
+        const matchCat = selectedArchiveCat === '전체' || r.category === selectedArchiveCat;
+        const matchStatus = statusFilter === '전체' || r.status === statusFilter;
+        const matchKey = !keyword || r.title.toLowerCase().includes(keyword) || r.memo.toLowerCase().includes(keyword);
+        return matchCat && matchStatus && matchKey;
+      });
+
+      const grid = document.getElementById('archive-records-grid');
+      if (!filtered.length) {
+        grid.innerHTML = `
+          <div class="md:col-span-2 bg-white rounded-3xl p-10 text-center border border-light-border">
+            <div class="text-3xl mb-2">📭</div>
+            <p class="font-bold text-ink-primary text-sm">조건에 맞는 콘텐츠 기록이 없습니다.</p>
+            <p class="text-xs text-ink-muted mt-1">상단의 [새 콘텐츠 기록하기] 버튼을 눌러 첫 기록을 남겨보세요!</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(rec => {
+        const stars = '★'.repeat(Number(rec.rating || 5)) + '☆'.repeat(5 - Number(rec.rating || 5));
+        return `
+          <div class="bg-white rounded-2xl p-5 border border-light-border hover:border-neon-pink/50 transition shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <div class="flex items-center gap-1.5">
+                  <span class="px-2.5 py-0.5 rounded-lg bg-light-subtle border border-light-border text-xs font-bold text-ink-primary">
+                    ${escapeHtml(getCategoryBadgeHtml(rec.category))}
+                  </span>
+                  ${getStatusBadgeHtml(rec.status)}
+                </div>
+                <span class="font-mono text-[11px] text-ink-muted">${escapeHtml(rec.date || '')}</span>
+              </div>
+              <h4 class="font-black text-base text-ink-primary mb-1">${escapeHtml(rec.title)}</h4>
+              <div class="text-neon-pink text-xs font-bold tracking-wider mb-2.5">${stars}</div>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed bg-light-subtle p-3 rounded-xl border border-light-border">
+                ${escapeHtml(rec.memo)}
+              </p>
+            </div>
+            <div class="flex justify-end gap-2 mt-3.5 pt-2.5 border-t border-light-border">
+              <button onclick="openRecordFormModal('${escapeHtml(rec.id)}')" class="px-2.5 py-1 rounded-lg bg-light-subtle hover:bg-neon-soft text-xs font-bold text-ink-secondary hover:text-neon-pink transition">
+                <i class="fa-solid fa-pen mr-1"></i>수정
+              </button>
+              <button onclick="deleteArchiveRecord('${escapeHtml(rec.id)}')" class="px-2.5 py-1 rounded-lg bg-light-subtle hover:bg-rose-50 text-xs font-bold text-ink-muted hover:text-rose-600 transition">
+                <i class="fa-solid fa-trash mr-1"></i>삭제
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openRecordFormModal(editId = '') {
+      const modal = document.getElementById('record-form-modal');
+      const formTitle = document.getElementById('record-form-title');
+      document.getElementById('record-edit-id').value = editId;
+
+      if (editId) {
+        const rec = loadArchiveData().find(r => r.id === editId);
+        if (rec) {
+          formTitle.textContent = '콘텐츠 기록 수정하기';
+          document.getElementById('rec-title').value = rec.title;
+          document.getElementById('rec-category').value = rec.category;
+          document.getElementById('rec-status').value = rec.status;
+          document.getElementById('rec-rating').value = String(rec.rating);
+          document.getElementById('rec-date').value = rec.date;
+          document.getElementById('rec-memo').value = rec.memo;
+        }
+      } else {
+        formTitle.textContent = '새 콘텐츠 기록하기';
+        document.getElementById('record-entry-form').reset();
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('rec-date').value = today;
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeRecordFormModal() {
+      const modal = document.getElementById('record-form-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('record-entry-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const editId = document.getElementById('record-edit-id').value;
+      const entry = {
+        id: editId || ('rec-' + Date.now()),
+        title: document.getElementById('rec-title').value.trim(),
+        category: document.getElementById('rec-category').value,
+        status: document.getElementById('rec-status').value,
+        rating: Number(document.getElementById('rec-rating').value),
+        date: document.getElementById('rec-date').value,
+        memo: document.getElementById('rec-memo').value.trim()
+      };
+
+      const records = loadArchiveData();
+      if (editId) {
+        const idx = records.findIndex(r => r.id === editId);
+        if (idx !== -1) records[idx] = entry;
+      } else {
+        records.unshift(entry);
+      }
+
+      saveArchiveData(records);
+      closeRecordFormModal();
+      renderArchiveRecords();
+      showToast(editId ? '콘텐츠 기록이 수정되었습니다! ✨' : '새 콘텐츠가 기록장에 안전하게 저장되었습니다! 📚');
+    });
+
+    function deleteArchiveRecord(id) {
+      const updated = loadArchiveData().filter(r => r.id !== id);
+      saveArchiveData(updated);
+      renderArchiveRecords();
+      showToast('선택한 기록이 삭제되었습니다.');
+    }
+
+    // =========================================================================
+    // 3-B. APP 2 로직: 예삐의 집중 공간 타이머 (MONGLE) + Web Audio API 사운드
+    // =========================================================================
+    let timerTotalSeconds = 25 * 60;
+    let timerRemainingSeconds = 25 * 60;
+    let timerIntervalId = null;
+    let timerIsRunning = false;
+    let currentTimerMascot = '🐰';
+    const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * 96; // 603.19
+
+    function formatTimerMMSS(sec) {
+      const m = String(Math.floor(sec / 60)).padStart(2, '0');
+      const s = String(sec % 60).padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    function updateTimerDisplay() {
+      const formatted = formatTimerMMSS(timerRemainingSeconds);
+      document.getElementById('timer-display-time').textContent = formatted;
+      document.getElementById('mini-timer-text').textContent = formatted;
+
+      const ratio = timerTotalSeconds > 0 ? (timerRemainingSeconds / timerTotalSeconds) : 0;
+      const offset = CIRCLE_CIRCUMFERENCE * (1 - ratio);
+      document.getElementById('timer-progress-circle').style.strokeDashoffset = offset;
+    }
+
+    function setTimerMode(mode, minutes) {
+      if (timerIntervalId) {
+        clearInterval(timerIntervalId);
+        timerIntervalId = null;
+      }
+      timerIsRunning = false;
+      timerTotalSeconds = minutes * 60;
+      timerRemainingSeconds = minutes * 60;
+
+      document.querySelectorAll('.timer-mode-btn').forEach(btn => {
+        btn.className = 'timer-mode-btn px-4 py-1.5 rounded-xl text-xs font-extrabold text-ink-secondary hover:text-neon-pink transition';
+      });
+      const activeBtn = document.getElementById(`mode-btn-${mode}`);
+      if (activeBtn) {
+        activeBtn.className = 'timer-mode-btn px-4 py-1.5 rounded-xl text-xs font-extrabold bg-neon-pink text-white shadow-neon-sm transition';
+      }
+
+      document.getElementById('timer-start-icon').className = 'fa-solid fa-play';
+      document.getElementById('timer-start-label').textContent = '집중 시작';
+      document.getElementById('timer-display-status').textContent = `${minutes}분 세팅 완료 · 시작을 눌러주세요`;
+      document.getElementById('launcher-mini-timer').classList.add('hidden');
+      document.getElementById('launcher-mini-timer').classList.remove('inline-flex');
+      updateTimerDisplay();
+    }
+
+    function setTimerMascot(emoji, msg) {
+      currentTimerMascot = emoji;
+      document.getElementById('timer-display-mascot').textContent = emoji;
+      document.getElementById('mini-timer-mascot').textContent = emoji;
+      document.getElementById('timer-display-status').textContent = msg;
+    }
+
+    function toggleTimer() {
+      if (timerIsRunning) {
+        clearInterval(timerIntervalId);
+        timerIntervalId = null;
+        timerIsRunning = false;
+        document.getElementById('timer-start-icon').className = 'fa-solid fa-play';
+        document.getElementById('timer-start-label').textContent = '계속 집중하기';
+        document.getElementById('timer-display-status').textContent = '잠시 일시정지됨';
+      } else {
+        if (timerRemainingSeconds <= 0) {
+          timerRemainingSeconds = timerTotalSeconds;
+        }
+        timerIsRunning = true;
+        document.getElementById('timer-start-icon').className = 'fa-solid fa-pause';
+        document.getElementById('timer-start-label').textContent = '일시정지';
+        document.getElementById('timer-display-status').textContent = '차크라 집중 몰입 중... 🔥';
+        document.getElementById('launcher-mini-timer').classList.remove('hidden');
+        document.getElementById('launcher-mini-timer').classList.add('inline-flex');
+
+        timerIntervalId = setInterval(() => {
+          timerRemainingSeconds -= 1;
+          updateTimerDisplay();
+          if (timerRemainingSeconds <= 0) {
+            clearInterval(timerIntervalId);
+            timerIntervalId = null;
+            timerIsRunning = false;
+            document.getElementById('timer-start-icon').className = 'fa-solid fa-play';
+            document.getElementById('timer-start-label').textContent = '다시 시작';
+            document.getElementById('timer-display-status').textContent = '집중 완료! 수고했어요 🎉';
+            playCompletionChime();
+            showToast('집중 타이머가 완료되었습니다! 방금 본 콘텐츠를 기록해 보세요 🎉');
+          }
+        }, 1000);
+      }
+    }
+
+    function resetTimer() {
+      if (timerIntervalId) {
+        clearInterval(timerIntervalId);
+        timerIntervalId = null;
+      }
+      timerIsRunning = false;
+      timerRemainingSeconds = timerTotalSeconds;
+      document.getElementById('timer-start-icon').className = 'fa-solid fa-play';
+      document.getElementById('timer-start-label').textContent = '집중 시작';
+      document.getElementById('timer-display-status').textContent = '초기화 완료 · 준비되었습니다';
+      document.getElementById('launcher-mini-timer').classList.add('hidden');
+      document.getElementById('launcher-mini-timer').classList.remove('inline-flex');
+      updateTimerDisplay();
+    }
+
+    function jumpFromTimerToRecord() {
+      switchLauncherApp('archive');
+      openRecordFormModal();
+    }
+
+    // Web Audio API 집중 앰비언스 사운드 신시사이저
+    let audioCtx = null;
+    let masterGainNode = null;
+    const activeSoundNodes = {};
+
+    function ensureAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContextClass();
+        masterGainNode = audioCtx.createGain();
+        masterGainNode.gain.value = 0.45;
+        masterGainNode.connect(audioCtx.destination);
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function createNoiseBuffer(type) {
+      const bufferSize = audioCtx.sampleRate * 2;
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = buffer.getChannelData(0);
+      let lastOut = 0.0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        if (type === 'white') {
+          output[i] = white * 0.25;
+        } else {
+          // 부드러운 브라운/핑크 노이즈 계열 필터링
+          output[i] = (lastOut + (0.04 * white)) / 1.04;
+          lastOut = output[i];
+          output[i] *= 1.8;
+        }
+      }
+      return buffer;
+    }
+
+    function toggleFocusSound(type) {
+      ensureAudioContext();
+      const btn = document.getElementById(`sound-btn-${type}`);
+      const stateLabel = btn.querySelector('.sound-state');
+
+      if (activeSoundNodes[type]) {
+        activeSoundNodes[type].source.stop();
+        activeSoundNodes[type].source.disconnect();
+        delete activeSoundNodes[type];
+        btn.className = 'sound-toggle-btn p-3 rounded-2xl bg-light-subtle border border-light-border text-left hover:border-neon-pink/50 transition';
+        stateLabel.textContent = 'OFF';
+        stateLabel.className = 'text-[10px] text-ink-muted sound-state';
+        return;
+      }
+
+      const source = audioCtx.createBufferSource();
+      source.buffer = createNoiseBuffer(type);
+      source.loop = true;
+
+      const filter = audioCtx.createBiquadFilter();
+      if (type === 'rain') {
+        filter.type = 'bandpass';
+        filter.frequency.value = 950;
+        filter.Q.value = 0.7;
+      } else if (type === 'cafe') {
+        filter.type = 'lowpass';
+        filter.frequency.value = 480;
+      } else if (type === 'forest') {
+        filter.type = 'bandpass';
+        filter.frequency.value = 620;
+        filter.Q.value = 1.4;
+      } else {
+        filter.type = 'lowpass';
+        filter.frequency.value = 1800;
+      }
+
+      source.connect(filter);
+      filter.connect(masterGainNode);
+      source.start();
+
+      activeSoundNodes[type] = { source, filter };
+      btn.className = 'sound-toggle-btn p-3 rounded-2xl bg-neon-soft/70 border-2 border-neon-pink text-left transition shadow-neon-sm';
+      stateLabel.textContent = 'ON · 재생 중';
+      stateLabel.className = 'text-[10px] text-neon-pink font-bold sound-state';
+    }
+
+    function stopAllFocusSounds() {
+      Object.keys(activeSoundNodes).forEach(type => toggleFocusSound(type));
+    }
+
+    function updateFocusSoundVolume(val) {
+      document.getElementById('sound-volume-label').textContent = `${val}%`;
+      if (masterGainNode && audioCtx) {
+        masterGainNode.gain.setTargetAtTime((Number(val) / 100) * 0.8, audioCtx.currentTime, 0.05);
+      }
+    }
+
+    function playCompletionChime() {
+      try {
+        ensureAudioContext();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+        osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.18); // E5
+        osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.36); // G5
+        gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.9);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.9);
+      } catch (e) {}
+    }
+
+    // =========================================================================
+    // 4. 사진 라이트박스 확대 모달
+    // =========================================================================
+    function openLightbox(primaryUrl, fallbackUrl, title, caption) {
+      const imgEl = document.getElementById('lightbox-img');
+      delete imgEl.dataset.triedFallback;
+      imgEl.setAttribute('data-fallback', fallbackUrl);
+      imgEl.onerror = function() {
+        handleDriveImageError(this, title);
+      };
+      imgEl.src = primaryUrl;
+
+      document.getElementById('lightbox-title').textContent = title;
+      document.getElementById('lightbox-caption').textContent = caption;
+
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('lightbox-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox-modal') closeLightbox();
+    });
+
+    // =========================================================================
+    // 5. 닌자 등록증 차크라 충전 & 나루토 명언 뽑기
+    // =========================================================================
+    const narutoQuotes = [
+      { quote: '“기록하고 만드는 것이 내 닌자의 길이다…! 👍”', chakra: '100% MAX 🔥', width: '100%' },
+      { quote: '“내뱉은 말은 굽히지 않는다… 기획한 무대와 웹앱은 끝까지 완성한다!”', chakra: '120% OVERDRIVE ⚡', width: '100%' },
+      { quote: '“사륜안으로도 다 못 베낄 만큼 취향 기록과 하모니가 쌓여가는 중!”', chakra: '95% HIGH 🍃', width: '95%' },
+      { quote: '“포기하지 않는 근성! 버그가 나도 수정할 때까지 물러서지 않는다!”', chakra: '110% SAGE MODE 🐸', width: '100%' },
+      { quote: '“합창부 60기의 팀워크처럼, 동료들과 함께할 때 가장 강한 차크라가 나온다 🎶”', chakra: '100% HARMONY ✨', width: '100%' }
+    ];
+    let quoteIdx = 0;
+
+    function generateNarutoQuote() {
+      quoteIdx = (quoteIdx + 1) % narutoQuotes.length;
+      const item = narutoQuotes[quoteIdx];
+      document.getElementById('naruto-quote').textContent = item.quote;
+      document.getElementById('chakra-level').textContent = item.chakra;
+      document.getElementById('chakra-bar').style.width = item.width;
+    }
+
+    // =========================================================================
+    // 6. 차크라 방명록 (localStorage 저장 + 선택적 Google Apps Script 연동 지원)
+    // =========================================================================
+    const GUESTBOOK_KEY = 'yeppi_essay_guestbook_v2';
+    // 추후 Google Apps Script 배포 URL을 입력하면 시트로도 자동 전송됩니다.
+    const GOOGLE_SCRIPT_URL = '';
+
+    const initialGuestbook = [
+      {
+        name: '합창부 60기 동기',
+        chakra: '200% 선인모드 ⚡',
+        msg: '기장으로서 여름연주회 기수무대 이끌어줘서 진짜 고마웠어! 한 페이지가 될 수 있게 최고였어 🎶',
+        date: '2026.11.20'
+      },
+      {
+        name: '나뭇잎마을 7반',
+        chakra: '150% 나선수리검 🍥',
+        msg: '예삐님 자기소개서 읽으면서 추진력과 따뜻함이 그대로 느껴졌어요! 응원합니다 👍',
+        date: '2026.11.22'
+      }
+    ];
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, (m) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[m]));
+    }
+
+    function renderGuestbook() {
+      let list = [];
+      try {
+        const saved = localStorage.getItem(GUESTBOOK_KEY);
+        list = saved ? JSON.parse(saved) : initialGuestbook;
+      } catch (e) {
+        list = initialGuestbook;
+      }
+
+      const container = document.getElementById('guestbook-list');
+      container.innerHTML = list.map(item => `
+        <div class="p-4 rounded-2xl bg-light-subtle border border-light-border flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-lg bg-neon-soft text-neon-pink text-xs font-extrabold border border-neon-pink/25">
+              ${escapeHtml(item.name)}
+            </span>
+            <span class="px-2 py-0.5 rounded-md bg-white text-ink-secondary font-mono text-[11px] font-bold border border-light-border">
+              ${escapeHtml(item.chakra || '100% MAX 🔥')}
+            </span>
+            <p class="text-sm text-ink-primary">${escapeHtml(item.msg)}</p>
+          </div>
+          <span class="text-[11px] font-mono text-ink-muted shrink-0 self-end sm:self-center">${escapeHtml(item.date)}</span>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById('guestbook-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nameInput = document.getElementById('guest-name');
+      const chakraSelect = document.getElementById('guest-chakra');
+      const msgInput = document.getElementById('guest-msg');
+
+      const name = nameInput.value.trim();
+      const chakra = chakraSelect.value;
+      const msg = msgInput.value.trim();
+      if (!name || !msg) return;
+
+      const now = new Date();
+      const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}`;
+
+      let list = [];
+      try {
+        const saved = localStorage.getItem(GUESTBOOK_KEY);
+        list = saved ? JSON.parse(saved) : [...initialGuestbook];
+      } catch (err) {
+        list = [...initialGuestbook];
+      }
+
+      list.unshift({ name, chakra, msg, date: dateStr });
+      try {
+        localStorage.setItem(GUESTBOOK_KEY, JSON.stringify(list));
+      } catch (err) {}
+
+      if (GOOGLE_SCRIPT_URL) {
+        try {
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nickname: name, chakra, message: msg })
+          });
+        } catch (err) {}
+      }
+
+      nameInput.value = '';
+      msgInput.value = '';
+      renderGuestbook();
+      showToast('예삐에게 따뜻한 차크라와 한 줄 메시지가 전달되었습니다! ⚡');
+    });
+
+    // =========================================================================
+    // 7. 소셜 샘플 아이콘 복사 및 토스트 알림
+    // =========================================================================
+    let toastTimer;
+    function copySocialSample(platform, sampleValue) {
+      try {
+        const temp = document.createElement('input');
+        temp.value = sampleValue;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+        showToast(`[샘플] ${platform} 주소(${sampleValue})가 복사되었습니다! 추후 실제 계정으로 수정해 보세요.`);
+      } catch (e) {
+        showToast(`[샘플] ${platform}: ${sampleValue} — 추후 실제 주소로 연결할 수 있습니다!`);
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-box');
+      document.getElementById('toast-message').textContent = message;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3600);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGuestbook();
+      renderArchiveRecords();
+      updateTimerDisplay();
+    });
+  </script>
+</body>
+</html>
